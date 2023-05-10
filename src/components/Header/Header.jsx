@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Header.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIsAuth } from "../../slices/authSlice";
+import { selectIsAuth } from "../../redux/slices/authSlice";
 import { Link } from "react-router-dom";
-import { logout } from "../../slices/authSlice";
+import { logout } from "../../redux/slices/authSlice";
 import logo from "../../asstes/VK_logo.png";
 
 const Header = () => {

@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-
 import { useDispatch } from "react-redux";
-import { Authorized } from "../../slices/authSlice";
+import { Authorized } from "../../redux/slices/authSlice";
 
-const Home = () => {
+const Profile = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -12,4 +11,4 @@ const Home = () => {
   return <div>home</div>;
 };
 
-export default Home;
+export default Profile;

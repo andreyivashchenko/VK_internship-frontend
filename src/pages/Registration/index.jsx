@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Registration.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRegister, selectIsAuth } from "../../slices/authSlice";
+import { fetchRegister, selectIsAuth } from "../../redux/slices/authSlice";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
 

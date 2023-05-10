@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Login.module.scss";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUserData, selectIsAuth } from "../../slices/authSlice";
+import { fetchUserData, selectIsAuth } from "../../redux/slices/authSlice";
 import { Navigate } from "react-router-dom";
 
 const Login = () => {
