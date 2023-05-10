@@ -1,0 +1,7 @@
+body {
+    background-color: #141414;
+    font-family: "Nunito", Roboto, system-ui, Tahoma, sans-serif;
+}
+#root, body, html{
+    height: 100%;
+}
