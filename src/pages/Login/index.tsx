@@ -1,13 +1,19 @@
-import React from "react";
+import React, { FC } from "react";
 import styles from "./Login.module.scss";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchUserData, selectIsAuth } from "../../redux/slices/authSlice";
+import {
+  fetchUserLogin,
+  LoginRes,
+  selectIsAuth,
+} from "../../redux/slices/authSlice";
 import { Navigate } from "react-router-dom";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { ILogin } from "../../types/types";
 
-const Login = () => {
-  const isAuth = useSelector(selectIsAuth);
-  const dispatch = useDispatch();
+const Login: FC = () => {
+  const isAuth = useAppSelector(selectIsAuth);
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
@@ -15,21 +21,24 @@ const Login = () => {
     reset,
   } = useForm({
     defaultValues: {
-      username: "",
+      email: "",
       password: "",
     },
     mode: "all",
   });
-  const onSubmit = async (values) => {
-    const data = await dispatch(fetchUserData(values));
-    if (!data.payload) {
-      reset();
-      return alert(`${data.error.message}`);
-    }
-    if ("token" in data.payload) {
-      window.localStorage.setItem("token", data.payload.token);
-      reset();
-    }
+  const onSubmit = async (values: ILogin) => {
+    await dispatch(fetchUserLogin(values))
+      .then((action) => {
+        if (action.meta.requestStatus === "rejected") {
+          alert(`${action.payload}, повторите попробуйте еще раз`);
+          reset();
+        }
+        const data: LoginRes = action.payload as LoginRes;
+        window.localStorage.setItem("token", data.token);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   if (isAuth) {
@@ -43,13 +52,18 @@ const Login = () => {
         <div className={styles.login__input}>
           <input
             type="text"
-            placeholder={"Username"}
-            {...register("username", {
-              required: "Укажите имя пользователя",
+            placeholder={"Email"}
+            {...register("email", {
+              required: "Введите почту.",
+              pattern: {
+                value:
+                  /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
+                message: "Введите корректную почту.",
+              },
             })}
           />
-          {errors?.username && (
-            <div className={styles.login__error}>{errors.username.message}</div>
+          {errors?.email && (
+            <div className={styles.login__error}>{errors.email.message}</div>
           )}
         </div>
 

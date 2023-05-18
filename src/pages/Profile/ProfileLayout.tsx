@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import { Outlet } from "react-router-dom";
 
-const ProfileLayout = () => {
+const ProfileLayout: FC = () => {
   return (
     <div>
       <Outlet />

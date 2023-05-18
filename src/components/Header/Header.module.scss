@@ -1,11 +1,13 @@
+@import "../../scss/variables";
 .header{
   &__wrapper{
     background-color: #222222;
+    height: $headerHeight
   }
   &__container{
     margin: 0 auto;
     max-width: 70%;
-    height: 50px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
   }

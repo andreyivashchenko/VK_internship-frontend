@@ -1,14 +1,13 @@
+@import "../../scss/variables";
+
 .wrapper {
   height: 100%;
-  max-height: 100%;
-
-
 }
 .container {
-  padding: 0 50px 50px 50px;
+  padding: 0 50px 0 50px;
   max-width: 1340px;
   border-radius: 10px;
   margin: 0 auto;
-  height: 100%;
+  height: $contentHeight;
   display: flex;
 }
