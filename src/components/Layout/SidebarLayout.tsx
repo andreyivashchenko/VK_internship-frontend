@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Outlet } from "react-router-dom";
 
-const ProfileLayout: FC = () => {
+const SidebarLayout: FC = () => {
   return (
     <div>
       <Outlet />
@@ -9,4 +9,4 @@ const ProfileLayout: FC = () => {
   );
 };
 
-export default ProfileLayout;
+export default SidebarLayout;

@@ -1,9 +1,9 @@
-import "./App.css";
+import "./scss/mainStyles.scss";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
-import Registration from "./pages/Registration";
-import Layout from "./pages/Layout/Layout";
-import ProfileLayout from "./pages/Profile/ProfileLayout";
+import Login from "./components/UI/Form/LoginForm";
+import Registration from "./components/UI/Form/RgistrationForm";
+import Layout from "./components/Layout/Layout";
+import SidebarLayout from "./components/Layout/SidebarLayout";
 import Profile from "./pages/Profile/Profile";
 import React from "react";
 
@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<ProfileLayout />}>
+          <Route path="/" element={<SidebarLayout />}>
             <Route index element={<Navigate to="/me" />} />
             <Route path="/me" element={<Profile />} />
             <Route path="/:id" element={<Profile />} />
