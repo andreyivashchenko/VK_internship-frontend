@@ -1,3 +1,75 @@
-div{
-  color: #E1E3E6;
+@import "../../scss/variables";
+
+.wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 0 0;
+}
+
+.container {
+  @include defContainer();
+  width: 100%;
+  position: relative;
+  height: 360px;
+  background-color: #424242;
+}
+
+.profile {
+  @include defContainer();
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 120px;
+  width: 100%;
+  display: flex;
+
+  &__avatar {
+    position: absolute;
+    top: -45px;
+    left: 18px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+
+    img {
+      border: 3px solid #222222;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    color: #e1e3e6;
+    padding: 0 0 0 230px;
+    height: 100%;
+    justify-content: space-around;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  &__aboutMe {
+    display: flex;
+  }
+}
+
+.aboutMe {
+  &__data {
+    font-size: 16px;
+    padding-left: 5px;
+    font-weight: 400;
+    color: #929292;
+  }
+
+  &__icon {
+    width: 17px;
+    margin-left: 7px;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
 }

@@ -1,12 +1,5 @@
-@import "../../scss/variables";
-
-.wrapper {
-
-}
 .container {
-  padding: 0 50px 0 50px;
-  max-width: 1340px;
-  border-radius: 10px;
   margin: 0 auto;
-  display: flex;
+  max-width: 1200px;
+  padding: 0 20px;
 }

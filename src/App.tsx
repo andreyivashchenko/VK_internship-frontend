@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./components/UI/Form/LoginForm";
 import Registration from "./components/UI/Form/RgistrationForm";
 import Layout from "./components/Layout/Layout";
-import SidebarLayout from "./components/Layout/SidebarLayout";
+import SidebarLayout from "./components/SidebarLayout/SidebarLayout";
 import Profile from "./pages/Profile/Profile";
 import React from "react";
 

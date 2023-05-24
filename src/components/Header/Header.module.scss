@@ -1,33 +1,39 @@
 @import "../../scss/variables";
-.header{
-  &__wrapper{
+
+.header {
+  &__wrapper {
     background-color: #222222;
 
   }
-  &__container{
+
+  &__container {
     margin: 0 auto;
-    max-width: 70%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    padding: 15px 20px;
     align-items: center;
   }
-  &__content{
-  display: flex;
+
+  &__content {
+    display: flex;
     align-items: center;
   }
-  &__logo{
+
+  &__logo {
     max-width: 24px;
     max-height: 24px;
   }
-  &__title{
+
+  &__title {
     font-size: 18px;
     font-weight: 700;
     padding-left: 5px;
     text-decoration: none;
     color: #E1E3E6;
   }
-  &__auth{
+
+  &__auth {
     display: flex;
     align-items: center;
 
@@ -40,7 +46,8 @@
       border-radius: 10px;
       margin: 0 4.5px;
       transition: background-color 0.3s;
-      &:hover{
+
+      &:hover {
         background-color: #333333;
       }
     }

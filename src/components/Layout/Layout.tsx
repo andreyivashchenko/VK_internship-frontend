@@ -8,10 +8,8 @@ const Layout: FC = () => {
     <>
       {" "}
       <Header />
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <Outlet />
-        </div>
+      <div className={styles.container}>
+        <Outlet />
       </div>
     </>
   );
