@@ -2,7 +2,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  padding: 20px 0 0 0;
+  padding-left: 10px;
 }
 
 .container {
@@ -13,7 +13,7 @@
   width: 100%;
   position: relative;
   height: 360px;
-  background-color: #424242;
+  background-color: #414141;
 }
 
 .profile {

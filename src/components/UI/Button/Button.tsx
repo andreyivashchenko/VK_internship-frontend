@@ -19,22 +19,35 @@ export const BaseButton: FC<BaseButtonProps> = ({
 interface CommonButtonProps extends BaseButtonProps {
   size?: "small" | "medium" | "large";
   image?: string;
+  stretched?: boolean;
+  textPositionLeft?: boolean;
 }
 
 const btnSize = {
   small: styles.commonBtn__small,
   medium: styles.commonBtn__medium,
   large: styles.commonBtn__large,
+  stretched: styles.commonBtn__stretched,
 };
 
 export const CommonButton: FC<CommonButtonProps> = ({
   children,
   size = "medium",
   image = "",
+  stretched = false,
+  textPositionLeft = false,
   ...props
 }) => {
   return (
-    <BaseButton className={clsx(styles.commonBtn, btnSize[size])} {...props}>
+    <BaseButton
+      className={clsx(
+        styles.commonBtn,
+        btnSize[size],
+        stretched && styles.commonBtn__stretched,
+        textPositionLeft && styles.commonBtn__textPositionLeft
+      )}
+      {...props}
+    >
       {!image ? (
         children
       ) : (

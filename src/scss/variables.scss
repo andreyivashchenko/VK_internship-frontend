@@ -1,6 +1,10 @@
 @mixin defContainer() {
-    border: 1px solid #414141;
-    border-radius: 15px;
-    background-color: #222222;
-    padding: 10px;
+  border: 1px solid #414141;
+  border-radius: 15px;
+  background-color: $colorGray;
+  padding: 10px;
 }
+
+$colorLightGray: #414141;
+$colorGray: #222222;
+$colorIcons: #70a9e9
