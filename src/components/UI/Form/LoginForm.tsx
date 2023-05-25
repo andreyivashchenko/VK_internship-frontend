@@ -10,6 +10,7 @@ import { Navigate } from "react-router-dom";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { ILogin } from "../../../types/types";
+import { CommonButton } from "../Button/Button";
 
 const Login: FC = () => {
   const isAuth = useAppSelector(selectIsAuth);
@@ -96,9 +97,7 @@ const Login: FC = () => {
             </div>
           )}
           <div className={styles.fromField__button}>
-            <button type="submit" className={styles.button}>
-              Войти
-            </button>
+            <CommonButton size={"medium"}>Войти</CommonButton>
           </div>
         </form>
       </div>

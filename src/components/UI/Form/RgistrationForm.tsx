@@ -10,6 +10,7 @@ import { Navigate } from "react-router-dom";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { IRegisteration } from "../../../types/types";
+import { CommonButton } from "../Button/Button";
 
 const Registration = () => {
   const isAuth = useAppSelector(selectIsAuth);
@@ -128,9 +129,7 @@ const Registration = () => {
             </span>
           )}
           <div className={styles.fromField__button}>
-            <button type="submit" className={styles.button}>
-              Зарегистрироваться
-            </button>
+            <CommonButton size={"medium"}>Зарегистрироваться</CommonButton>
           </div>
         </form>
       </div>

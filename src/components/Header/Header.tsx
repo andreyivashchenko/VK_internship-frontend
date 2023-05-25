@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../../asstes/VK_logo.png";
 import { logoutUser } from "../../redux/slices/userSlice";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { CommonButton } from "../UI/Button/Button";
 
 const Header: FC = () => {
   const dispatch = useAppDispatch();
@@ -24,16 +25,16 @@ const Header: FC = () => {
         <div className={styles.header__auth}>
           {path === "/login" ? (
             <Link to="/registration">
-              <button>Зарегистрироваться</button>
+              <CommonButton size={"medium"}>Зарегистрироваться</CommonButton>
             </Link>
           ) : path === "/registration" ? (
-            <>
-              <Link to="/login">
-                <button>Войти</button>
-              </Link>
-            </>
+            <Link to="/login">
+              <CommonButton size={"medium"}>Войти</CommonButton>
+            </Link>
           ) : (
-            <button onClick={onClickLogout}>Выйти</button>
+            <CommonButton size={"medium"} onClick={onClickLogout}>
+              Выйти
+            </CommonButton>
           )}
         </div>
       </div>

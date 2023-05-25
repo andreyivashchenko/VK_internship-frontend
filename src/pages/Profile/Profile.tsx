@@ -35,18 +35,28 @@ const Profile: FC = () => {
             <h2 className={styles.profile__name}>
               {`${user?.firstname} ${user?.lastname}`}
             </h2>
-            <div className={styles.profile__aboutMe}>
-              <img src={marker} alt="" className={styles.aboutMe__icon} />{" "}
-              <h3 className={styles.aboutMe__data}>Город</h3>
-              <img
-                src={university}
-                alt=""
-                className={styles.aboutMe__icon}
-              />{" "}
-              <h3 className={styles.aboutMe__data}>Универ</h3>
-              <img src={birthday} alt="" className={styles.aboutMe__icon} />
-              <h3 className={styles.aboutMe__data}>Дата рождения</h3>
-            </div>
+            <ul className={styles.profile__description}>
+              <li className={styles.description__item}>
+                <img src={marker} alt="" className={styles.description__icon} />{" "}
+                <h3 className={styles.description__data}>Город</h3>
+              </li>
+              <li className={styles.description__item}>
+                <img
+                  src={university}
+                  alt=""
+                  className={styles.description__icon}
+                />{" "}
+                <h3 className={styles.description__data}>Универ</h3>
+              </li>
+              <li className={styles.description__item}>
+                <img
+                  src={birthday}
+                  alt=""
+                  className={styles.description__icon}
+                />
+                <h3 className={styles.description__data}>Дата рождения</h3>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
