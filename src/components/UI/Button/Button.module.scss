@@ -21,10 +21,13 @@
   }
 
   &__medium {
-    width: 100%;
     padding: 8px 20px;
     font-size: 16px;
     border-radius: 10px;
+  }
+
+  &__background {
+    background-color: #333333;
   }
 
   &__large {
@@ -39,14 +42,14 @@
 
   &__textPositionLeft {
     text-align: left;
-    padding-left: 10px;
+    padding-left: 7px;
   }
 
   &__row {
     display: flex;
     align-items: center;
 
-    gap: 0 5px;
+    gap: 0 10px;
   }
 
   &__img {

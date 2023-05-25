@@ -18,6 +18,7 @@ export const BaseButton: FC<BaseButtonProps> = ({
 
 interface CommonButtonProps extends BaseButtonProps {
   size?: "small" | "medium" | "large";
+  background?: boolean;
   image?: string;
   stretched?: boolean;
   textPositionLeft?: boolean;
@@ -28,6 +29,7 @@ const btnSize = {
   medium: styles.commonBtn__medium,
   large: styles.commonBtn__large,
   stretched: styles.commonBtn__stretched,
+  background: styles.commonBtn__background,
 };
 
 export const CommonButton: FC<CommonButtonProps> = ({
@@ -36,6 +38,7 @@ export const CommonButton: FC<CommonButtonProps> = ({
   image = "",
   stretched = false,
   textPositionLeft = false,
+  background = false,
   ...props
 }) => {
   return (
@@ -44,7 +47,8 @@ export const CommonButton: FC<CommonButtonProps> = ({
         styles.commonBtn,
         btnSize[size],
         stretched && styles.commonBtn__stretched,
-        textPositionLeft && styles.commonBtn__textPositionLeft
+        textPositionLeft && styles.commonBtn__textPositionLeft,
+        background && styles.commonBtn__background
       )}
       {...props}
     >

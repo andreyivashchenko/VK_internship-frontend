@@ -9,6 +9,8 @@ import test from "../../asstes/testPhoto.jpg";
 import marker from "../../asstes/markerIcon.svg";
 import university from "../../asstes/universityIcon.svg";
 import birthday from "../../asstes/birthdayIcon.svg";
+import { CommonButton } from "../../components/UI/Button/Button";
+import { PostInput } from "../../components/UI/Input/Input";
 
 const Profile: FC = () => {
   const dispatch = useAppDispatch();
@@ -58,6 +60,25 @@ const Profile: FC = () => {
               </li>
             </ul>
           </div>
+          <div className={styles.profile__edit}>
+            <CommonButton size={"medium"} background={true}>
+              Редактировать профиль
+            </CommonButton>
+          </div>
+        </div>
+      </div>
+      <div className={styles.block}>
+        <div className={styles.block__leftCol}>
+          <div className={styles.block__newPost}>
+            <PostInput
+              placeholder={"Оно пока что нормально не работает"}
+              image={test}
+            />
+          </div>
+          <div className={styles.block__posts}>posts</div>
+        </div>
+        <div className={styles.block__rightCol}>
+          <div className={styles.block__friends}>friends</div>
         </div>
       </div>
     </div>

@@ -13,28 +13,40 @@ const Sidebar = () => {
       <ul>
         <li className={styles.sidebar__item}>
           <Link to="/">
-            <CommonButton image={profile} textPositionLeft={true}>
+            <CommonButton
+              image={profile}
+              textPositionLeft={true}
+              stretched={true}
+            >
               Моя страница
             </CommonButton>
           </Link>
         </li>
         <li className={styles.sidebar__item}>
           <Link to="#">
-            <CommonButton image={news} textPositionLeft={true}>
+            <CommonButton image={news} textPositionLeft={true} stretched={true}>
               Новости
             </CommonButton>
           </Link>
         </li>
         <li className={styles.sidebar__item}>
           <Link to="#">
-            <CommonButton image={messages} textPositionLeft={true}>
+            <CommonButton
+              image={messages}
+              textPositionLeft={true}
+              stretched={true}
+            >
               Сообщения
             </CommonButton>
           </Link>
         </li>
         <li className={styles.sidebar__item}>
           <Link to="#">
-            <CommonButton image={friends} textPositionLeft={true}>
+            <CommonButton
+              image={friends}
+              textPositionLeft={true}
+              stretched={true}
+            >
               Друзья
             </CommonButton>
           </Link>
